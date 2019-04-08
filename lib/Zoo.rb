@@ -23,8 +23,7 @@ class Zoo
   end
 
   def animal_species
-    species_array = self.animals.select.uniq {|animal| animal.species}
-    species_array.map {|animal| animal.species}
+    self.animals.map(&:species).uniq
   end
 
   def find_by_species(species)
@@ -32,7 +31,7 @@ class Zoo
   end
 
   def animal_nicknames
-    self.animals.map {|animal| animal.nickname}
+    self.animals.map(&:nickname)
   end
 
 end
